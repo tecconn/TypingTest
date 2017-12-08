@@ -28,7 +28,7 @@ $(function() {
     TypingTest.prototype.onResetClick = function(_this) {
         _this.data.game.reset();
         $("#time-elapsed").text("0:00");
-        $("#letters-typed").text("0 Letters");
+        $("#words-typed").text("0 Words");
         $("button#reset").prop("disabled", true);
     };
 
@@ -38,7 +38,7 @@ $(function() {
     };
 
     TypingTest.prototype.inputCallback = function(event) {
-        $("#letters-typed").text(event.data.charactersPressed.length + " Letters");
+        $("#words-typed").text(event.data.answerService.getWordCount() + " Words");
     };
 
     var typingTest = new TypingTest();
