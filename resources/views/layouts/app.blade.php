@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="{{ asset('public/js/bootstrap/css/bootstrap-theme.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
 
+        @section('css')
+        @show
+
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -69,6 +72,10 @@
                 <aside class="col-md-3 col-md-offset-1 small-margin">
                     <div class="well">
                         @section('aside')
+                            <h3 class="text-center">Statistics</h3>
+                            <div class="chart-container" style="position: relative; height:100%; width:100%">
+                                <canvas id="chart"></canvas>
+                            </div>
                         @show
                     </div>
                 </aside>
@@ -83,5 +90,11 @@
         <!-- JS Definitions -->
         <script src="{{ asset('public/js/jquery/jquery-2.x-git.min.js') }}"></script>
         <script src="{{ asset('public/js/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('public/js/chartjs/Chart.js' )}}"></script>
+
+        <script src="{{ asset('public/js/application/service/statistic_service.js' )}}"></script>
+
+        @section('javascript')
+        @show
     </body>
 </html>
