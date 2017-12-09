@@ -81,7 +81,7 @@
                 </aside>
             </div>
         </main>
-        <footer class="footer navbar-default">
+        <footer class="footer navbar-default navbar-fixed-bottom">
             <div class="container">
                 <div class="text-muted text-right">&copy; 2017 - William Callahan</div>
             </div>
