@@ -24,13 +24,18 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-7">
-            <button type="button" class="btn btn-success" id="start">Start</button>
-            <button type="button" class="btn btn-danger" id="stop" disabled="disabled">Stop</button>
-            <button type="button" class="btn btn-warning" id="reset" disabled="disabled">Reset</button>
+        <div class="col-md-5">
+            <p>
+                <button type="button" class="btn btn-success" id="start">Start</button>
+                <button type="button" class="btn btn-danger" id="stop" disabled="disabled">Stop</button>
+                <button type="button" class="btn btn-warning" id="reset" disabled="disabled">Reset</button>
+            </p>
         </div>
         <div class="col-sm-3 text-center">
             <pre id="words-typed">0 Words</pre>
+        </div>
+        <div class="col-sm-2 text-center">
+            <pre id="wpm">0 WPM</pre>
         </div>
         <div class="col-sm-2 text-right">
             <pre id="time-elapsed">0:00</pre>

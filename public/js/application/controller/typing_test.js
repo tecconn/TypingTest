@@ -29,6 +29,7 @@ $(function() {
         _this.data.game.reset();
         $("#time-elapsed").text("0:00");
         $("#words-typed").text("0 Words");
+        $("#wpm").text("0 WPM");
         $("button#reset").prop("disabled", true);
     };
 
@@ -39,6 +40,8 @@ $(function() {
 
     TypingTest.prototype.inputCallback = function(event) {
         $("#words-typed").text(event.data.answerService.getWordCount() + " Words");
+        $("#wpm").text(event.data.answerService.getWPM() + " WPM");
+
     };
 
     var typingTest = new TypingTest();
