@@ -1,7 +1,6 @@
 body {
     padding-top: 6em;
-    background: #e1e1e1 url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background: #e1e1e1 url("../img/asfalt-dark.png");
 }
 
 footer {

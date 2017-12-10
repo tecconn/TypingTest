@@ -15,6 +15,7 @@ class GameController extends Controller {
 	}
 
 	public function save(Request $request) {
+		syslog(LOG_INFO, "Saving...");
 		$game = Game::create($request->all());
 		return response()->json($game, 201);
 	}

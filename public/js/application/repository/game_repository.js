@@ -3,7 +3,7 @@
  * @constructor
  */
 function GameRepository() {
-    ApiRepository.call(this, "game/");
+    ApiRepository.call(this, "game");
 }
 
 GameRepository.prototype = Object.create(ApiRepository.prototype);

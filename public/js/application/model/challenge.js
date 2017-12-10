@@ -8,7 +8,7 @@
  */
 function Challenge(id, text, level) {
     this.id = id;
-    this.text = "Please try this example to asses how fast you can type. The difficulty of the following test will" +
+    this.text = "Please try this example to asses how fast you can type. The difficulty of the following test will " +
         "be based on how well you perform this test.";
     this.level = 0;
 }

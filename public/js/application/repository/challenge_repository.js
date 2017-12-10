@@ -3,7 +3,7 @@
  * @constructor
  */
 function ChallengeRepository() {
-    ApiRepository.call(this, "challenge/");
+    ApiRepository.call(this, "challenge");
 }
 
 ChallengeRepository.prototype = Object.create(ApiRepository.prototype);

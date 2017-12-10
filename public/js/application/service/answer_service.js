@@ -30,7 +30,16 @@ AnswerService.prototype.getWordCount = function () {
  * @return {string[]} All answered words
  */
 AnswerService.prototype.getWords = function () {
-    return this._charactersPressed.join("").split(" ");
+    return this.getWordsAsString().split(" ");
+};
+
+/**
+ * Gets the answer that the user provided as a single string
+ *
+ * @return {string} The user's answer as a singe string
+ */
+AnswerService.prototype.getWordsAsString = function() {
+    return this._charactersPressed.join("");
 };
 
 /**

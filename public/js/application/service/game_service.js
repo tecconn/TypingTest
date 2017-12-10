@@ -30,10 +30,10 @@ GameService.prototype.start = function() {
     if (!this.answerService.startTime) {
         _this.canvasDrawService.drawRectangleCenter(2, 2, this.canvasDrawService.getTextMeasurement(this.challenge.getWords()[0]).width, this.canvasDrawService.fontSize, "yellow");
         this.canvasDrawService.drawTextCenter(this.challenge.getWordsAsString());
-        $(window).on("keypress", this, this.onKeyPress);
-        $(window).on("keypress", this, this._inputCallback);
         this.answerService.startTime = new Date();
     }
+    $(window).on("keypress", this, this.onKeyPress);
+    $(window).on("keypress", this, this._inputCallback);
     this._timer = setInterval(function() {
         _this.timeElapsed.setSeconds(_this.timeElapsed.getSeconds() + 1);
         _this._intervalCallback(_this.timeElapsed);
@@ -97,8 +97,23 @@ GameService.prototype.handleGameOver = function() {
     var text = this.answerService.getWPM() + " WPM!";
     this.canvasDrawService.clear();
     this.canvasDrawService.drawTextCenter(text, this.canvasDrawService.getTextMeasurement(this.answerService.getWPM() + " WPM!").width / 2);
-    if (this._gameOverCallback())
+    this.notifyServerOfGame();
+    if (this._gameOverCallback)
         this._gameOverCallback();
+};
+
+/**
+ * Notifies the server that a game has been completed
+ */
+GameService.prototype.notifyServerOfGame = function() {
+    var gameRepository = new GameRepository();
+    var game = new Game();
+    game.challenge_id = this.challenge.id;
+    game.answer = this.answerService.getWordsAsString();
+    game.start_time = this.answerService.startTime;
+    game.end_time = this.answerService.endTime;
+    game.username = "william callahan"; //TODO add an input for the username
+    gameRepository.save(game);
 };
 
 /**
