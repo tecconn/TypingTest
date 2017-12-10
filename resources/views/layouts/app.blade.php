@@ -3,8 +3,7 @@
     <head>
         @include('includes.head')
 
-        @section('css')
-        @show
+        @yield('css')
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -51,7 +50,6 @@
 
         <script src="{{ asset('public/js/application/service/statistic_service.js' )}}"></script>
 
-        @section('javascript')
-        @show
+        @yield('javascript')
     </body>
 </html>

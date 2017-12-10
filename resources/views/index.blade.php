@@ -9,6 +9,7 @@
 @endsection
 
 @section('javascript')
+    <script src="{{ asset('public/js/application/model/challenge.js') }}"></script>
     <script src="{{ asset('public/js/application/model/game.js') }}"></script>
     <script src="{{ asset('public/js/application/model/user.js') }}"></script>
     <script src="{{ asset('public/js/application/service/answer_service.js') }}"></script>

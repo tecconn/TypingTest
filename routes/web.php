@@ -19,3 +19,9 @@ Route::get('/game/{id}', 'GameController@getOne');
 Route::post('/game', 'GameController@create');
 Route::put('/game/{id}', 'GameController@update');
 Route::delete('/game/{id}', 'GameController@delete');
+
+Route::get('/challenge', 'ChallengeController@getAll');
+Route::get('/challenge/{id}', 'ChallengeController@getOne');
+Route::post('/challenge', 'ChallengeController@create');
+Route::put('/challenge/{id}', 'ChallengeController@update');
+Route::delete('/challenge/{id}', 'ChallengeController@delete');
