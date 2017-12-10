@@ -48,6 +48,9 @@
         <script src="{{ asset('public/js/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('public/js/chartjs/Chart.js' )}}"></script>
 
+        <script src="{{ asset('public/js/application/repository/api_repository.js') }}"></script>
+        <script src="{{ asset('public/js/application/repository/game_repository.js') }}"></script>
+        <script src="{{ asset('public/js/application/repository/challenge_repository.js') }}"></script>
         <script src="{{ asset('public/js/application/service/statistic_service.js' )}}"></script>
 
         @yield('javascript')

@@ -32,7 +32,6 @@ class Game extends Model {
 		'username',
 		'start_time',
 		'end_time',
-		'end_time',
 		'answer',
 		'challenge',
 	];

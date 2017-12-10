@@ -9,11 +9,16 @@
 @endsection
 
 @section('javascript')
+    <script>
+        var baseUrl = "{{ @url("/") }}";
+    </script>
     <script src="{{ asset('public/js/application/model/challenge.js') }}"></script>
     <script src="{{ asset('public/js/application/model/game.js') }}"></script>
     <script src="{{ asset('public/js/application/model/user.js') }}"></script>
+    <script src="{{ asset('public/js/application/repository/game_repository.js') }}"></script>
     <script src="{{ asset('public/js/application/service/answer_service.js') }}"></script>
     <script src="{{ asset('public/js/application/service/canvas_draw_service.js') }}"></script>
+    <script src="{{ asset('public/js/application/service/game_service.js') }}"></script>
     <script src="{{ asset('public/js/application/utility/font_size_utility.js') }}"></script>
     <script src="{{ asset('public/js/application/controller/typing_test.js') }}"></script>
 @endsection
