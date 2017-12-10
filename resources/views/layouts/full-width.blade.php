@@ -23,21 +23,13 @@
         </header>
         <main class="container">
             <div class="row">
-                <section class="col-md-8">
-                    <div class="well">
-						@yield('content')
+                <section class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            @yield('content')
+                        </div>
                     </div>
                 </section>
-                <aside class="col-md-3 col-md-offset-1 small-margin">
-                    <div class="well">
-                        @section('aside')
-                            <h3 class="text-center">Statistics</h3>
-                            <div class="chart-container" style="position: relative; height:100%; width:100%">
-                                <canvas id="chart"></canvas>
-                            </div>
-                        @show
-                    </div>
-                </aside>
             </div>
         </main>
         <footer class="footer navbar-default">

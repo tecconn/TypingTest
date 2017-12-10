@@ -2,6 +2,8 @@
 
 @section('title', 'Typing Test')
 
+@slot('navigation', 'home')
+
 @section('css')
     <link rel="stylesheet" href="{{ asset('public/css/typing_test.css') }}"/>
 @endsection
