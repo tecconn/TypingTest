@@ -31,7 +31,7 @@
                 </section>
             </div>
         </main>
-        <footer class="footer navbar-default">
+        <footer class="footer navbar-default navbar-fixed-bottom">
             @include('includes.footer')
         </footer>
 
