@@ -22,21 +22,13 @@
         </header>
         <main class="container">
             <div class="row">
-                <section class="col-md-8">
-                    <div class="well">
-						@yield('content')
+                <section class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            @yield('content')
+                        </div>
                     </div>
                 </section>
-                <aside class="col-md-3 col-md-offset-1 small-margin">
-                    <div class="well">
-                        @section('aside')
-                            <h3 class="text-center">Statistics</h3>
-                            <div class="chart-container" style="position: relative; height:100%; width:100%">
-                                <canvas id="chart"></canvas>
-                            </div>
-                        @show
-                    </div>
-                </aside>
             </div>
         </main>
         <footer class="footer navbar-default">
@@ -48,9 +40,6 @@
         <script src="{{ asset('public/js/bootstrap/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('public/js/chartjs/Chart.js' )}}"></script>
 
-        <script src="{{ asset('public/js/application/repository/api_repository.js') }}"></script>
-        <script src="{{ asset('public/js/application/repository/game_repository.js') }}"></script>
-        <script src="{{ asset('public/js/application/repository/challenge_repository.js') }}"></script>
         <script src="{{ asset('public/js/application/service/statistic_service.js' )}}"></script>
 
         @yield('javascript')

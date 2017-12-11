@@ -4,6 +4,8 @@
  * @constructor
  */
 function AnswerService() {
+    this.startTime = null;
+    this.endTime = null;
     this._charactersPressed = [];
     this._charactersPressedWithDeleted = [];
 }
@@ -28,7 +30,16 @@ AnswerService.prototype.getWordCount = function () {
  * @return {string[]} All answered words
  */
 AnswerService.prototype.getWords = function () {
-    return this._charactersPressed.join("").split(" ");
+    return this.getWordsAsString().split(" ");
+};
+
+/**
+ * Gets the answer that the user provided as a single string
+ *
+ * @return {string} The user's answer as a singe string
+ */
+AnswerService.prototype.getWordsAsString = function() {
+    return this._charactersPressed.join("");
 };
 
 /**
@@ -58,8 +69,32 @@ AnswerService.prototype.addCharacter = function (character) {
 };
 
 /**
+ * Gets all the characters that the user pressed, excluding characters removed from backspaces
+ *
+ * @return {Array.<String>} Characters pressed by the user
+ */
+AnswerService.prototype.getCharacters = function() {
+    return this._charactersPressed;
+};
+
+/**
  * Removes the last character that the user provided as an answer
  */
 AnswerService.prototype.backspacePressed = function () {
     this._charactersPressed.pop();
+};
+
+/**
+ * Gets the total Words per minute.
+ *
+ * If the {@link AnswerService#endTime} is null, the WPM is calculated based on the current time.
+ *
+ * @return {number} WPM of the user
+ */
+AnswerService.prototype.getWPM = function() {
+    if (this.startTime === null)
+        throw new Error("Cannot get WPM; startTime not defined!");
+    else if (this.endTime === null)
+        return Math.round(this.getWords().length / (((new Date()).getTime() - this.startTime.getTime()) / (1000 * 60))); //Divide by 1000 * 60 to convert milliseconds to minutes
+    return Math.round(this.getWords().length / ((this.endTime.getTime() - this.startTime.getTime()) / (1000 * 60)));
 };
