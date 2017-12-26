@@ -3,9 +3,12 @@ $(function() {
     function TypingTest() {
         this._started = false;
         var canvas = document.getElementById("typing-test");
+        var statisticService = new StatisticService();
+        statisticService.generateStatistics();
         $("button#start").on("click", this, this.onStartClick);
         $("button#stop").on("click", this, this.onStopClick);
         $("button#reset").on("click", this, this.onResetClick);
+        $(document).on("gameSaved", statisticService, statisticService.update);
         $.ajaxSetup({
             contentType: "application/json",
             dataType: "json",

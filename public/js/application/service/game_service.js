@@ -113,7 +113,9 @@ GameService.prototype.notifyServerOfGame = function() {
     game.start_time = this.answerService.startTime;
     game.end_time = this.answerService.endTime;
     game.username = "william callahan"; //TODO add an input for the username
-    gameRepository.save(game);
+    $.when(gameRepository.save(game)).done(function() {
+        $(document).trigger("gameSaved");
+    });
 };
 
 /**
