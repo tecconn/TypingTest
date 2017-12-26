@@ -12,6 +12,7 @@
     <script>
         var baseUrl = "{{ @url("/") }}";
     </script>
+    <script src="{{ asset('public/js/momentjs/momentjs.min.js') }}"></script>
     <script src="{{ asset('public/js/application/model/challenge.js') }}"></script>
     <script src="{{ asset('public/js/application/model/game.js') }}"></script>
     <script src="{{ asset('public/js/application/model/user.js') }}"></script>

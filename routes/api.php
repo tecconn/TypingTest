@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:api');
+
+Route::get('/games', 'GameController@getAll');
+Route::get('/games/{id}', 'GameController@getOne');
+Route::post('/games', 'GameController@save');
+Route::put('/games/{id}', 'GameController@update');
+Route::delete('/games/{id}', 'GameController@delete');
+
+Route::get('/challenges', 'ChallengeController@getAll');
+Route::get('/challenges/{id}', 'ChallengeController@getOne');
+Route::post('/challenges', 'ChallengeController@save');
+Route::put('/challenges/{id}', 'ChallengeController@update');
+Route::delete('/challenges/{id}', 'ChallengeController@delete');

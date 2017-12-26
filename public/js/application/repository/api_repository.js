@@ -16,7 +16,7 @@ function ApiRepository(endpointUrl) {
  * @return {string|*} Url of the API Endpoint
  */
 ApiRepository.prototype.getUrl = function() {
-    return this.endpointUrl
+    return "api/" + this.endpointUrl
 };
 
 /**

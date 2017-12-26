@@ -7,6 +7,7 @@ $(function() {
         $("button#stop").on("click", this, this.onStopClick);
         $("button#reset").on("click", this, this.onResetClick);
         $.ajaxSetup({
+            contentType: "application/json",
             dataType: "json",
             url: baseUrl,
             async: true,
@@ -14,6 +15,9 @@ $(function() {
                 console.error(errorThrown);
             }
         });
+        Date.prototype.toJSON = function() {
+            return moment(this).format("YYYY-MM-DD HH:mm:ss");
+        };
         this.gameService = new GameService(this.intervalCallback, canvas, this.inputCallback);
     }
 

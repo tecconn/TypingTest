@@ -18,4 +18,8 @@
     <p>
         This application was created by William Callahan
     </p>
+    <hr/>
+    <p>
+        Users have played {{ count($games) }} total games!
+    </p>
 @endsection

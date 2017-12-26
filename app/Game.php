@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -33,7 +34,15 @@ class Game extends Model {
 		'start_time',
 		'end_time',
 		'answer',
+		'challenge_id',
 		'challenge',
+	];
+
+	protected $dates = [
+		'created_at',
+		'updated_at',
+		'start_time',
+		'end_time'
 	];
 
 	public function challenges() {
